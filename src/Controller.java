@@ -75,20 +75,20 @@ public class Controller {
 
         int studentCount = 0;
         String temp = "";
-        while(studentCount <= n){
-            temp = names[getRandomInt(0, names.length)]; //GETS A RANDOM NAME
+        while(studentCount++ <= n){
+            temp += names[getRandomInt(0, names.length)]; //GETS A RANDOM NAME
             temp += ",";
             temp += getRandomInt(0,22000);
-            // TEMP FORMAT BY HERE: name,code
-            try {
-                FileWriter fileWriter = new FileWriter("src\\data.txt");
-                fileWriter.write(temp);
-                fileWriter.close();
-            }
-            catch (Exception e) {
-                e.getStackTrace();
-            }
-
+            temp+= "\n";
+            // TEMP FORMAT BY HERE: name,code\n
+        }
+        try {
+            FileWriter fileWriter = new FileWriter("src\\data.txt");
+            fileWriter.write(temp);
+            fileWriter.close();
+        }
+        catch (Exception e) {
+            e.getStackTrace();
         }
     }
 
