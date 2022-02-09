@@ -1,41 +1,40 @@
-import java.util.Vector;
+import java.util.ArrayList;
 
 /**
  * The implementation of the sorts to be profiled
  */
 public class Sorts implements ISorts{
-    private Vector<Student> data;
-
+    private ArrayList<Student> data;
     /**
      * Constructor for the Sorts object
      * @param data the data vector to be sorted
      */
-    public Sorts(Vector<Student> data){
+    public Sorts(ArrayList<Student> data){
         this.data = data;
     }
 
     @Override
-    public Vector<Student> gnomeSort() {
+    public ArrayList<Student> gnomeSort() {
         return null;
     }
 
     @Override
-    public Vector<Student> mergeSort() {
+    public ArrayList<Student> mergeSort() {
         return null;
     }
 
     @Override
-    public Vector<Student> quickSort() {
+    public ArrayList<Student> quickSort() {
         return null;
     }
 
     @Override
-    public Vector<Student> radixSort() {
+    public ArrayList<Student> radixSort() {
         return null;
     }
 
     @Override
-    public Vector<Student> recursiveBubbleSort() {
+    public ArrayList<Student> recursiveBubbleSort(ArrayList<Student> arr, int n) {
         // SOURCE CODE BY GeeksForGeeks: https://www.geeksforgeeks.org/recursive-bubble-sort/
         return null;
     }

@@ -1,4 +1,4 @@
-import java.util.Vector;
+import java.util.ArrayList;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -10,14 +10,14 @@ import java.io.FileWriter;
 public class Controller {
     private Sorts sorts;
     private Vista v;
-    private Vector<Student> data;
+    private ArrayList<Student> data;
 
     /**
      * Constructor for the Controller
      */
     public Controller(){
         v = new Vista();
-        data = new Vector<>();
+        data = new ArrayList<>();
     }
 
     /**
