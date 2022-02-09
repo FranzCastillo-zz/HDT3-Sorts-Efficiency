@@ -26,10 +26,8 @@ public class Controller {
      */
     public void execute(){
         v.start();
-        // TO CHECK IF THE FILE ALREADY EXISTS
-        if(readFile()){
-            // APPLY THE SELECTED SORT
-        }else {
+        // TO CHECK IF THE FILE DOESN'T EXIST
+        if(!readFile()) {
             createUnsortedFile(v.askInt(10, 3000));
         }
     }
@@ -97,6 +95,20 @@ public class Controller {
      * Note: It must be sorted before calling this method.
      */
     private void createSortedFile(){
-
+        try{
+            String temp = "";
+            for (Student student:
+                    data) {
+                temp += student.getName();
+                temp += ",";
+                temp += student.getCode();
+                temp += "\n";
+            }
+            FileWriter fileWriter = new FileWriter("src\\data.txt");
+            fileWriter.write(temp);
+            fileWriter.close();
+        }catch (Exception e){
+            e.getStackTrace();
+        }
     }
 }

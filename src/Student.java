@@ -2,8 +2,8 @@
  * Model Class for the Student object
  */
 public class Student implements IStudent, Comparable{
-    String name;
-    int code;
+    private String name;
+    private int code;
 
     /**
      * Builder of Student object, storing its name and code.
