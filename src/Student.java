@@ -1,7 +1,7 @@
 /**
  * Model Class for the Student object
  */
-public class Student implements IStudent, Comparable{
+public class Student implements IStudent, Comparable<Student>{
     private String name;
     private int code;
 
@@ -24,8 +24,15 @@ public class Student implements IStudent, Comparable{
     public int getCode() {
         return code;
     }
+
     @Override
-    public int compareTo(Object o) {
-        return 0;
+    public int compareTo(Student o) {
+        if(this.getCode() > o.getCode() ){
+            return 1;
+        }else if (this.getCode() < o.getCode()){
+            return -1;
+        }else { // THEY'RE EQUAL
+            return 0;
+        }
     }
 }

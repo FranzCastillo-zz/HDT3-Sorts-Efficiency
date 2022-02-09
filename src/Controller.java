@@ -18,7 +18,6 @@ public class Controller {
     public Controller(){
         v = new Vista();
         data = new Vector<>();
-        sorts = new Sorts(data);
     }
 
     /**
@@ -30,6 +29,11 @@ public class Controller {
         if(!readFile()) {
             createUnsortedFile(v.askInt(10, 3000));
         }
+        // TO THIS POINT THE FILE MUST EXIST AND BE ALREADY READ
+        sorts = new Sorts(data);
+        /*sorts.recursiveBubbleSort();
+        // OVERWRITES THE FILE WITH THE SORTED DATA
+        createSortedFile();*/
     }
 
     /** Tries to read the file 'data.txt' on the same path.

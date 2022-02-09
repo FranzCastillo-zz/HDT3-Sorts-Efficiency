@@ -32,5 +32,5 @@ public interface ISorts {
      * Applies 'recursive bubble sort' to the data specified in the Sorts Constructor
      * @return Sorted vector after 'recursive bubble sort'
      */
-    public Vector<Student> RecursiveBubbleSort();
+    public Vector<Student> recursiveBubbleSort();
 }
