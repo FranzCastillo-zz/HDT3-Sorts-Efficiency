@@ -8,29 +8,30 @@ public interface ISorts {
      * Applies 'gnome sort' to the data specified in the Sorts Constructor
      * @return Sorted vector after gnome sort
      */
-    public ArrayList<Student> gnomeSort();
+    public void gnomeSort();
 
     /**
      * Applies 'merge sort' to the data specified in the Sorts Constructor
      * @return Sorted vector after 'merge sort'
      */
-    public ArrayList<Student> mergeSort();
+    public void mergeSort();
 
     /**
      * Applies 'quick sort' to the data specified in the Sorts Constructor
      * @return Sorted vector after 'merge sort'
      */
-    public ArrayList<Student> quickSort();
+    public void quickSort();
 
     /**
      * Applies 'radix sort' to the data specified in the Sorts Constructor
      * @return Sorted vector after 'radix sort'
      */
-    public ArrayList<Student> radixSort();
+    public void radixSort();
 
     /**
      * Applies 'recursive bubble sort' to the data specified in the Sorts Constructor
      * @return Sorted vector after 'recursive bubble sort'
      */
-    public ArrayList<Student> recursiveBubbleSort(ArrayList<Student> arr, int n);
+    public void recursiveBubbleSort(ArrayList<Student> arr, int n);
+
 }

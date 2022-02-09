@@ -4,38 +4,43 @@ import java.util.ArrayList;
  * The implementation of the sorts to be profiled
  */
 public class Sorts implements ISorts{
-    private ArrayList<Student> data;
-    /**
-     * Constructor for the Sorts object
-     * @param data the data vector to be sorted
-     */
-    public Sorts(ArrayList<Student> data){
-        this.data = data;
+
+    @Override
+    public void gnomeSort() {
+
     }
 
     @Override
-    public ArrayList<Student> gnomeSort() {
-        return null;
+    public void mergeSort() {
+
     }
 
     @Override
-    public ArrayList<Student> mergeSort() {
-        return null;
+    public void quickSort() {
+
     }
 
     @Override
-    public ArrayList<Student> quickSort() {
-        return null;
+    public void radixSort() {
+
     }
 
     @Override
-    public ArrayList<Student> radixSort() {
-        return null;
-    }
-
-    @Override
-    public ArrayList<Student> recursiveBubbleSort(ArrayList<Student> arr, int n) {
+    public void recursiveBubbleSort(ArrayList<Student> arr, int n) {
         // SOURCE CODE BY GeeksForGeeks: https://www.geeksforgeeks.org/recursive-bubble-sort/
-        return null;
+        // BASE CASE
+        if(n <= 1){
+            return;
+        }
+
+        for(int i = 0; i < n-1; i++){ //TO FIND THE LARGEST ELEMENT IN THE ARRAYLIST
+            if(arr.get(i).compareTo(arr.get(i+1)) == 1){ // IF THE NEXT ONE IS BIGGER
+                Student temp = arr.get(i);
+                arr.set(i, arr.get(i+1));
+                arr.set(i+1, temp);
+            }
+        }
+        // THE BIGGEST ELEMENT IS FIXED
+        recursiveBubbleSort(arr, n-1);
     }
 }

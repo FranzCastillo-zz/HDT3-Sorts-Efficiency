@@ -47,4 +47,7 @@ public class Vista {
             }
         }
     }
+    public void sucessfullySorted(){
+        prnt("Se han aplicado los sorts! El archivo 'data.txt' esta ordenado");
+    }
 }

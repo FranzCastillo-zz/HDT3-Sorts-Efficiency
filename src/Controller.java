@@ -29,11 +29,15 @@ public class Controller {
         if(!readFile()) {
             createUnsortedFile(v.askInt(10, 3000));
         }
+        readFile();
         // TO THIS POINT THE FILE MUST EXIST AND BE ALREADY READ
-        sorts = new Sorts(data);
-        /*sorts.recursiveBubbleSort();
+        sorts = new Sorts();
+        // ----------- THIS SIDE IS WHERE THE SELECTED SORT MUST BE EXECUTED -----------------
+        sorts.recursiveBubbleSort(data, data.size());
+
         // OVERWRITES THE FILE WITH THE SORTED DATA
-        createSortedFile();*/
+        createSortedFile();
+        v.sucessfullySorted();
     }
 
     /** Tries to read the file 'data.txt' on the same path.
