@@ -26,7 +26,8 @@ public class Controller {
     public void execute(){
         v.start();
         // TO CHECK IF THE FILE DOESN'T EXIST
-        if(!readFile()) {
+        File tempFile = new File("src\\data.txt");
+        if(!tempFile.exists()) {
             createUnsortedFile(v.askInt(10, 3000));
         }
         readFile();
@@ -86,8 +87,8 @@ public class Controller {
             temp += ",";
             temp += getRandomInt(0,22000);
             temp+= "\n";
-            // TEMP FORMAT BY HERE: name,code\n
         }
+        // TEMP FORMAT BY HERE: name,code\n name,code\n...
         try {
             FileWriter fileWriter = new FileWriter("src\\data.txt");
             fileWriter.write(temp);
