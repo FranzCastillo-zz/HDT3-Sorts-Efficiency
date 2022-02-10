@@ -154,8 +154,8 @@ public class Sorts implements ISorts {
     // https://www.geeksforgeeks.org/radix-sort/
 
     Student mx = arr.get(0);
-    for (int i = 1; i < n; i++)
-      if (arr.get(i).compareTo(mx) > 1)
+    for (int i=1; i < n; i++)
+      if (arr.get(i).compareTo(mx) == 1)
         mx = arr.get(i);
     return mx.getCode();
   }
