@@ -35,7 +35,7 @@ public class Controller {
     sorts = new Sorts();
     // ----------- THIS SIDE IS WHERE THE SELECTED SORT MUST BE EXECUTED
     // -----------------
-    sorts.recursiveBubbleSort(data, data.size());
+    sorts.gnomeSort(data,data.size());
 
     // OVERWRITES THE FILE WITH THE SORTED DATA
     createSortedFile();

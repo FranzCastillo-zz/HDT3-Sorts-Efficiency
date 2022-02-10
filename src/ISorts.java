@@ -20,7 +20,14 @@ public interface ISorts {
    * 
    * @return Sorted vector after 'merge sort'
    */
-  public void mergeSort();
+  public void mergeSort(ArrayList<Student> arr, int l, int m, int r);
+  
+  /**
+   * Applies 'Real merge sort' to the data specified in the Sorts Constructor
+   * 
+   * @return Sorted vector after 'merge sort'
+   */
+  public void realMergeSort(ArrayList<Student> arr, int l, int r);
 
   /**
    * Applies 'quick sort' to the data specified in the Sorts Constructor
