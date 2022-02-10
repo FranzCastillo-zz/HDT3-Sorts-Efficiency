@@ -8,7 +8,6 @@ import java.io.FileWriter;
  * This is the Controller of the MVC implementation for the Sorts profiling
  */
 public class Controller {
-    private Sorts sorts;
     private Vista v;
     private ArrayList<Student> data;
 
@@ -32,19 +31,20 @@ public class Controller {
         }
         readFile();
         // TO THIS POINT THE FILE MUST EXIST AND BE ALREADY READ
-        sorts = new Sorts();
+        Sorts sorts = new Sorts();
         // ----------- THIS SIDE IS WHERE THE SELECTED SORT MUST BE EXECUTED -----------------
-        sorts.recursiveBubbleSort(data, data.size());
-
+        long startTime = System.currentTimeMillis();
+        sorts.recursiveBubbleSort(data, data.size()); // CHANGE THIS LINE TO TEST DIFFERENT SORTS
+        long finishTime = System.currentTimeMillis();
+        v.showExecutionTime(finishTime - startTime);
         // OVERWRITES THE FILE WITH THE SORTED DATA
         createSortedFile();
-        v.sucessfullySorted();
+        v.successfullySorted();
     }
 
-    /** Tries to read the file 'data.txt' on the same path.
-     * @return boolean TRUE if the file was successfully read, FALSE if not
+    /** Tries to read the file 'data.txt' on the same path and fills the data property
      */
-    private boolean readFile(){
+    private void readFile(){
         try{
             File file = new File("src\\data.txt");
             Scanner fileReader = new Scanner(file);
@@ -56,10 +56,8 @@ public class Controller {
             }
             fileReader.close();
             v.readSuccessfully();
-            return true;
         }catch(FileNotFoundException e){
             v.fileNotFound();
-            return false;
         }
     }
 
