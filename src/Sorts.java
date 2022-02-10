@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Sorts implements ISorts {
 
   @Override
-  public <Student> void gnomeSort(ArrayList<Student> arr, int n) {
+  public void gnomeSort(ArrayList<Student> arr, int n) {
     // SOURCE CODE BY GeeksForGeeks:
     // https://www.geeksforgeeks.org/gnome-sort-a-stupid-one/
     // BASE CASE
@@ -43,7 +43,7 @@ public class Sorts implements ISorts {
   }
 
   @Override
-  public <Student> void recursiveBubbleSort(ArrayList<Student> arr, int n) {
+  public void recursiveBubbleSort(ArrayList<Student> arr, int n) {
     // SOURCE CODE BY GeeksForGeeks:
     // https://www.geeksforgeeks.org/recursive-bubble-sort/
     // BASE CASE

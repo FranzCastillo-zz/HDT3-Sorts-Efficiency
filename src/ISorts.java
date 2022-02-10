@@ -13,7 +13,7 @@ public interface ISorts {
    * 
    * @return Sorted vector after gnome sort
    */
-  public <Student> void gnomeSort(ArrayList<Student> arr, int n);
+  public void gnomeSort(ArrayList<Student> arr, int n);
 
   /**
    * Applies 'merge sort' to the data specified in the Sorts Constructor
@@ -44,6 +44,6 @@ public interface ISorts {
    * 
    * @return Sorted vector after 'recursive bubble sort'
    */
-  public <Student> void recursiveBubbleSort(ArrayList<Student> arr, int n);
+  public void recursiveBubbleSort(ArrayList<Student> arr, int n);
 
 }
