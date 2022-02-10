@@ -35,7 +35,7 @@ public class Controller {
     sorts = new Sorts();
     // ----------- THIS SIDE IS WHERE THE SELECTED SORT MUST BE EXECUTED
     // -----------------
-    sorts.gnomeSort(data,data.size());
+    sorts.radixSort(data, data.size());
 
     // OVERWRITES THE FILE WITH THE SORTED DATA
     createSortedFile();
