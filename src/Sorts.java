@@ -30,6 +30,7 @@ public class Sorts implements ISorts {
 
   @Override
   public void mergeSort(ArrayList<Student> arr, int l, int m, int r) {
+    //SOURCE CODE BY: https://www.geeksforgeeks.org/merge-sort/
     // Find sizes of two subarrays to be merged
     int n1 = m - l + 1;
     int n2 = r - m;
@@ -81,6 +82,7 @@ public class Sorts implements ISorts {
   @Override
   public void realMergeSort(ArrayList<Student> arr, int l, int r) {
     if (l < r) {
+      //SOURCE CODE BY: https://www.geeksforgeeks.org/merge-sort/
       // Find the middle point
       int m = l + (r - l) / 2;
 
@@ -93,9 +95,57 @@ public class Sorts implements ISorts {
     }
   }
 
-  @Override
-  public void quickSort() {
+  public void swap(ArrayList<Student> arr, int i, int j){
+      //SOURCE CODE BY: https://www.geeksforgeeks.org/quick-sort/?ref=lbp
 
+      Student temp = arr.get(i);
+      arr.set(i,arr.get(j));
+      arr.set(j,temp);
+  }
+
+  public int partition(ArrayList<Student> arr, int low, int high){
+      //SOURCE CODE BY: https://www.geeksforgeeks.org/quick-sort/?ref=lbp
+
+      // pivot
+      Student pivot = arr.get(high);
+         
+      // Index of smaller element and
+      // indicates the right position
+      // of pivot found so far
+      int i = (low - 1);
+     
+      for(int j = low; j <= high - 1; j++)
+      {
+             
+      // If current element is smaller
+      // than the pivot
+      if (arr.get(j).compareTo(pivot) == 1)
+      {
+        // Increment index of
+        // smaller element
+        i++;
+        swap(arr, i, j);
+      }
+      }
+      swap(arr, i + 1, high);
+      return (i + 1);
+  }
+  
+  @Override
+  public void quickSort(ArrayList<Student> arr, int low, int high) {
+      //SOURCE CODE BY: https://www.geeksforgeeks.org/quick-sort/?ref=lbp
+      if (low < high)
+      {
+             
+        // pi is partitioning index, arr[p]
+        // is now at right place
+        int pi = partition(arr, low, high);
+ 
+        // Separately sort elements before
+        // partition and after partition
+        quickSort(arr, low, pi - 1);
+        quickSort(arr, pi + 1, high);
+      }
   }
 
   @Override

@@ -35,7 +35,7 @@ public class Controller {
     sorts = new Sorts();
     // ----------- THIS SIDE IS WHERE THE SELECTED SORT MUST BE EXECUTED
     // -----------------
-    sorts.radixSort(data, data.size());
+    sorts.quickSort(data, 0, data.size()-1);
 
     // OVERWRITES THE FILE WITH THE SORTED DATA
     createSortedFile();
