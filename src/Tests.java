@@ -36,4 +36,28 @@ public class Tests {
         assertEquals(33, unsorted.get(2).getCode());
         assertEquals(50, unsorted.get(3).getCode());
     }
+    
+    @Test
+    public void quickSortTest(){
+        unsorted = new ArrayList<>();
+        unsort();
+        Sorts sort = new Sorts();
+        sort.quickSort(unsorted,0, unsorted.size()-1);
+        assertEquals(1, unsorted.get(3).getCode());
+        assertEquals(23, unsorted.get(2).getCode());
+        assertEquals(33, unsorted.get(1).getCode());
+        assertEquals(50, unsorted.get(0).getCode());
+    }
+    
+    @Test
+    public void mergeSortTest(){
+        unsorted = new ArrayList<>();
+        unsort();
+        Sorts sort = new Sorts();
+        sort.realMergeSort(unsorted,0, unsorted.size()-1);
+        assertEquals(1, unsorted.get(0).getCode());
+        assertEquals(23, unsorted.get(1).getCode());
+        assertEquals(33, unsorted.get(2).getCode());
+        assertEquals(50, unsorted.get(3).getCode());
+    }
 }
