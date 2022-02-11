@@ -49,7 +49,7 @@ public class Controller {
    */
   private boolean readFile() {
     try {
-      File file = new File("src\\data.txt");
+      File file = new File("data.txt");
       Scanner fileReader = new Scanner(file);
       while (fileReader.hasNextLine()) {
         String line = fileReader.nextLine();
@@ -96,7 +96,7 @@ public class Controller {
     }
     // TEMP FORMAT BY HERE: name,code\n name,code\n...
     try {
-      FileWriter fileWriter = new FileWriter("src\\data.txt");
+      FileWriter fileWriter = new FileWriter("data.txt");
       fileWriter.write(temp);
       fileWriter.close();
     } catch (Exception e) {
@@ -117,7 +117,7 @@ public class Controller {
         temp += student.getCode();
         temp += "\n";
       }
-      FileWriter fileWriter = new FileWriter("src\\data.txt");
+      FileWriter fileWriter = new FileWriter("data.txt");
       fileWriter.write(temp);
       fileWriter.close();
     } catch (Exception e) {
