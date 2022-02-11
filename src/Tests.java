@@ -1,6 +1,6 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.ArrayList;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class Tests {
     ArrayList<Student> unsorted;
@@ -55,6 +55,18 @@ public class Tests {
         unsort();
         Sorts sort = new Sorts();
         sort.realMergeSort(unsorted,0, unsorted.size()-1);
+        assertEquals(1, unsorted.get(0).getCode());
+        assertEquals(23, unsorted.get(1).getCode());
+        assertEquals(33, unsorted.get(2).getCode());
+        assertEquals(50, unsorted.get(3).getCode());
+    }
+
+    @Test
+    public void radixSortTest(){
+      unsorted = new ArrayList<>();
+        unsort();
+        Sorts sort = new Sorts();
+        sort.radixSort(unsorted, unsorted.size());
         assertEquals(1, unsorted.get(0).getCode());
         assertEquals(23, unsorted.get(1).getCode());
         assertEquals(33, unsorted.get(2).getCode());
